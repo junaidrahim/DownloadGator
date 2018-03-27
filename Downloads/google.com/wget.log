@@ -1,0 +1,16 @@
+--2018-03-28 00:44:47--  http://google.com/
+Resolving google.com (google.com)... 172.217.27.206, 2404:6800:4009:800::200e
+Connecting to google.com (google.com)|172.217.27.206|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.google.co.in/?gfe_rd=cr&dcr=0&ei=J5i6WtfINa2cX9y8lmA [following]
+--2018-03-28 00:44:47--  http://www.google.co.in/?gfe_rd=cr&dcr=0&ei=J5i6WtfINa2cX9y8lmA
+Resolving www.google.co.in (www.google.co.in)... 172.217.160.227, 2404:6800:4002:804::2003
+Connecting to www.google.co.in (www.google.co.in)|172.217.160.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+     0K .......... ..                                           283K=0.04s
+
+2018-03-28 00:44:48 (283 KB/s) - ‘index.html’ saved [12751]
+

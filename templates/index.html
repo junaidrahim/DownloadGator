@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DownloadGator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand" style="font-size: 30px;" href="/">DownloadGator</span>
+    </nav>
+    
+    <div class="container">
+        <br><br><br>
+        <h1 style="margin-left:15px;">Enter the link below to download the file on the server</h1>    
+        <br><br><br>
+        
+        <form class="col-lg-10" action="{{ url_for('api_download') }}" method="post">
+            <div class="form-group">
+                <label for="linkInput">Enter the Link</label>
+                <input name="linkInput" type="text" class="form-control form-control-lg" placeholder="Paste Here">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Start Download</button>
+        </form>
+
+    </div>
+</body>
+</html>
