@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>DownloadGator</title>
-
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
-    
-
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -14,18 +15,36 @@
     </nav>
     
     <div class="container">
-        <br><br><br>
+        <br><br>
         <h1 style="margin-left:15px;">Enter the link below to download the file on the server</h1>    
-        <br><br><br>
-        
+        <br>
         <form class="col-lg-10" action="{{ url_for('api_download') }}" method="post">
             <div class="form-group">
                 <label for="linkInput">Enter the Link</label>
-                <input name="linkInput" type="text" class="form-control form-control-lg" placeholder="Paste Here">
+                <input name="linkInput" type="text" class="form-control form-control-lg" placeholder="Paste Here" required>
             </div>
             <button type="submit" class="btn btn-primary btn-lg">Start Download</button>
         </form>
+        <br><br>
 
+        <div>
+            <div class="card" style="width: 18rem;margin-left: 15px;float:left;margin-bottom:20px;">
+                <div class="card-body">
+                <h5 class="card-title">Monitor Downloads</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Progress of Downloads</h6>
+                <p class="card-text">Have a look on the files that are currently being downloaded on the server.</p>
+                <a href="/monitor" class="btn btn-success card-link">View</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;margin-left: 15px; float: left;margin-bottom:20px;">
+                <div class="card-body">
+                <h5 class="card-title">Total Downloads</h5>
+                <p class="card-text"><h1>{{dir_size}}</h1></p>
+                </div> 
+            </div>
+        </div>
+        <br><br>
     </div>
 </body>
 </html>
