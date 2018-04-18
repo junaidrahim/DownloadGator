@@ -8,6 +8,7 @@ app = Flask(__name__)
 download_path = "{}/Downloads/".format(os.getcwd())
 
 def append_to_downloads(data):
+    # append the argument to Downloads/downloads.json file
     downloads_json_file = json.loads(open(download_path+"/downloads.json","r").read())
     downloads_json_file.append(data)
     downloads_json_file = json.dumps(downloads_json_file,sort_keys=True, indent=4)
@@ -26,6 +27,7 @@ def monitor():
 
 @app.route("/api/download",methods=["POST"])
 def api_download():
+    # starting the download
     link = request.form["linkInput"]
     wget_cmd = "wget {} -o wget.log".format(link)
     folder_name = link.split("/")[-1]
@@ -36,6 +38,8 @@ def api_download():
 
 @app.route("/api/monitor",methods=["GET"])
 def api_monitor():
+    # read the Downloads/downloads.json and append the wget.log of every folder and
+    # return that json
     downloads_data = json.loads(open(download_path+"/downloads.json","r").read())
     for i in downloads_data:
         i["wget_log"] = open(download_path+"/"+i["folder"]+"/wget.log","r").read()

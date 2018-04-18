@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Monitor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand" style="font-size: 30px;">Monitor Downloads</span>
+    </nav>
     
+    <div class="container" id="monitor_container">
+        <br><br>
+    </div>
+
 </body>
+<script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/monitor.js') }}"></script>
 </html>
