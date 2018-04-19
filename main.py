@@ -2,7 +2,7 @@
 
 from flask import Flask, request, redirect, render_template, jsonify
 from telegram import Telegram
-import os,json,datetime,subprocess
+import os,json,datetime,subprocess,time
 
 app = Flask(__name__)
 download_path = "{}/Downloads/".format(os.getcwd())
@@ -56,4 +56,18 @@ def start_telegram():
     Telegram("Junaid")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=3000, debug=True)
+    time.sleep(5) # some time for ngrok to start
+    
+    # Token of DownloadGatorBot (@downloadgator_bot) on Telegram
+    bot_token = "580264852:AAHd6JUBxjj6iDoYMH8GN95bwZkZ3A7Byvw"
+    
+    #Enter your user id on Telegram, its an integer, you can get it from @get_id_bot
+    user_id = 470088607
+    
+    telegram_bot = Telegram(bot_token,user_id) #instantiating the bot
+    
+    # sending the message to the user that the server was started on this ngrok url
+    telegram_bot.sendServerStartedMessage()
+    
+    app.run(host="0.0.0.0",port=3000)
+    
