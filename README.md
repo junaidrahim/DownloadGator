@@ -9,12 +9,19 @@
 2. Wget (built-in in linux, need to install on windows)
 3. Python 3
 
+The server is started using ngrok. When the server starts, a message with the url is sent to the Telegram bot @downloadgator_bot (Download Telegram from Google Playstore)
+
+**Add your telegram user id in the `main.py` file on line 65, else it won't work.**
+**You can get your id from the @get_id_bot in Telegram**
+
+1.   Make the `start_server.sh` file executable and run with `./start_server.sh` or
+2.   Run `sh start_server.sh`
+
 To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, run the `reset_downloads.sh` file on the server by either
 1.  `sh reset_downloads.sh`  or
 2.  `./reset_downloads.sh` (make it executable before running)
 
 
-Just run the `main.py` file and the server should start on `localhost:3000`
 
 
 ## Features to be Added:
@@ -22,7 +29,6 @@ Just run the `main.py` file and the server should start on `localhost:3000`
 1.  Cancel a particular Download
 2.  Alert whether Download was started or not
 3.  Server Download Speed Data
-4.  Telegram Bot Support
 
 
 ## Screenshots
