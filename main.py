@@ -62,7 +62,7 @@ if __name__ == "__main__":
     bot_token = "580264852:AAHd6JUBxjj6iDoYMH8GN95bwZkZ3A7Byvw"
     
     #Enter your user id on Telegram, its an integer, you can get it from @get_id_bot
-    user_id = 0000000 # put your id here
+    user_id = 470088607 # put your id here
     
     telegram_bot = Telegram(bot_token,user_id) #instantiating the bot
     

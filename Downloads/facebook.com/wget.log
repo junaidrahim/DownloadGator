@@ -1,0 +1,28 @@
+URL transformed to HTTPS due to an HSTS policy
+--2018-04-19 21:51:18--  https://facebook.com/
+Resolving facebook.com (facebook.com)... 157.240.16.35, 2a03:2880:f12f:83:face:b00c:0:25de
+Connecting to facebook.com (facebook.com)|157.240.16.35|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.facebook.com/ [following]
+--2018-04-19 21:51:19--  https://www.facebook.com/
+Resolving www.facebook.com (www.facebook.com)... 157.240.16.35, 2a03:2880:f12f:83:face:b00c:0:25de
+Connecting to www.facebook.com (www.facebook.com)|157.240.16.35|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://www.facebook.com/unsupportedbrowser [following]
+--2018-04-19 21:51:19--  https://www.facebook.com/unsupportedbrowser
+Reusing existing connection to www.facebook.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+     0K .......... .......... .......... .......... ..........  289K
+    50K .......... .......... .......... .......... ..........  269K
+   100K .......... .......... .......... .......... ..........  230K
+   150K .......... .......... .......... .......... ..........  168K
+   200K .......... .......... .......... .......... .......... 66.6K
+   250K .......... .......... .......... .......... ..........  103K
+   300K .......... .......... .......... .......... ..........  201K
+   350K .......... .......... .......... ..........             105K=2.7s
+
+2018-04-19 21:51:22 (142 KB/s) - ‘index.html’ saved [400276]
+
