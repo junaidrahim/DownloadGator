@@ -9,6 +9,11 @@
 2. Wget (built-in in linux, need to install on windows)
 3. Python 3
 
+To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, run the `reset_downloads.sh` file on the server by either
+1.  `sh reset_downloads.sh`  or
+2.  `./reset_downloads.sh` (make it executable before running)
+
+
 Just run the `main.py` file and the server should start on `localhost:3000`
 
 
