@@ -14,7 +14,8 @@ The server is started using ngrok. When the server starts, a message with the ur
 **Add your telegram user id in the `main.py` file on line 65, else it won't work.**
 **You can get your id from the @get_id_bot in Telegram**
 
-1.   Make the `start_server.sh` file executable and run with `./start_server.sh` or
+1.   Read more about setting up ngork on [ngrok](https://ngrok.com/)
+2.   Make the `start_server.sh` file executable and run with `./start_server.sh` or
 2.   Run `sh start_server.sh`
 
 To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, run the `reset_downloads.sh` file on the server by either
