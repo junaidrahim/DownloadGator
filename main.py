@@ -48,7 +48,6 @@ def api_monitor():
     downloads_data = json.loads(open(download_path+"/downloads.json","r").read())
     for i in downloads_data:
         i["wget_log"] = open(download_path+"/"+i["folder"]+"/wget.log","r").read()
-    print(downloads_data)
     return jsonify(downloads_data)
 
 
@@ -72,4 +71,5 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0",port=3000)
 
     telegram_bot.sendServerStoppedMessage()
+    raise SystemExit
     
