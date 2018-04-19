@@ -7,7 +7,7 @@ function parse_and_fill(data){
             <h5 class="card-title">`+ data[i].folder+`</h5>
             <h6 class="card-subtitle mb-2 text-muted">`+ data[i].time+`</h6>
             <p class="card-text">`+ data[i].link +`</p>
-            <button class="btn btn-info card-link" data-toggle="modal" data-target="#detailsModal`+i.toString()+`">View</button>
+            <button onclick="updateModalData(`+i.toString()+`)" class="btn btn-info card-link" data-toggle="modal" data-target="#detailsModal`+i.toString()+`">View</button>
 
             <div class="modal fade" id="detailsModal`+i.toString()+`" tabindex="-1" role="dialog" aria-labelledby="detailsModalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -18,7 +18,7 @@ function parse_and_fill(data){
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id="modal_wget_log`+i.toString()+`">
                             <pre>`+ data[i].wget_log+`</pre>
                         </div>
                         <div class="modal-footer">
@@ -36,13 +36,27 @@ function parse_and_fill(data){
 }
 
 
+function updateModalData(index){
+    console.log(index)
+    $.ajax({
+        type:"GET",
+        url:"/api/monitor",
+        success:function(data){
+            log_holder = document.getElementById("modal_wget_log"+index.toString())
+            var text = `<pre>`+data[index].wget_log+`</pre>`;
+            log_holder.innerHTML = text;
+            setTimeout(function(){updateModalData(index);},2000)
+        }
+    });
+}
+
 function getMonitoringData(){
     $.ajax({
         type:"GET",
         url:"/api/monitor", //call the api every 5 sec to fetch the data and 
         success:function(data){
             parse_and_fill(data); //update the html
-            setTimeout(function(){getMonitoringData();},60000);
+            //setTimeout(function(){getMonitoringData();},60000);
         }
     });
 }
