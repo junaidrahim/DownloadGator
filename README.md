@@ -11,3 +11,5 @@
 ## Screenshots
 
 > ![Main](screenshots/a.png)
+> ![Main](screenshots/b.png)
+> ![Main](screenshots/c.png)
