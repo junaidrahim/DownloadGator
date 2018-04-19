@@ -17,6 +17,13 @@ To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, 
 Just run the `main.py` file and the server should start on `localhost:3000`
 
 
+## Features to be Added:
+
+1.  Cancel Downloads Feature
+2.  Alert whether Download was started or not
+3.  Server Download Speed Data
+4.  Telegram Bot Support
+
 ## Screenshots
 
 > ![Main](screenshots/a.png)
