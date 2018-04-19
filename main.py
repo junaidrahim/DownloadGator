@@ -57,12 +57,12 @@ def start_telegram():
 
 if __name__ == "__main__":
     time.sleep(5) # some time for ngrok to start
-    
+
     # Token of DownloadGatorBot (@downloadgator_bot) on Telegram
     bot_token = "580264852:AAHd6JUBxjj6iDoYMH8GN95bwZkZ3A7Byvw"
     
     #Enter your user id on Telegram, its an integer, you can get it from @get_id_bot
-    user_id = 470088607
+    user_id = #put your id here
     
     telegram_bot = Telegram(bot_token,user_id) #instantiating the bot
     
