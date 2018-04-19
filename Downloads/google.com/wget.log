@@ -1,0 +1,16 @@
+--2018-04-19 19:31:03--  http://google.com/
+Resolving google.com (google.com)... 172.217.27.206, 2404:6800:4009:800::200e
+Connecting to google.com (google.com)|172.217.27.206|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://www.google.com/ [following]
+--2018-04-19 19:31:04--  http://www.google.com/
+Resolving www.google.com (www.google.com)... 172.217.27.196, 2404:6800:4009:800::2004
+Connecting to www.google.com (www.google.com)|172.217.27.196|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+     0K .......... ...                                         1.07M=0.01s
+
+2018-04-19 19:31:04 (1.07 MB/s) - ‘index.html’ saved [13642]
+

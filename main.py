@@ -32,10 +32,13 @@ def api_download():
 
     now = datetime.datetime.now()
     current_date_time = str(now).split(" ")[0] + " " + str(now.hour) + ":" + str(now.minute) + ":" + str(now.second)
-    append_to_downloads({'time':current_date_time,'link':link,'folder':folder_name})
-    
-    os.system("cd {} && mkdir {} && cd {} && {} &".format(download_path,folder_name,folder_name,wget_cmd))
-
+    try:
+        os.mkdir(download_path+"/"+folder_name)
+        os.system("cd {} && {} &".format(download_path + "/" + folder_name,wget_cmd))
+        append_to_downloads({'time':current_date_time,'link':link,'folder':folder_name})
+        
+    except OSError:
+        print("")
     return redirect("/")
 
 @app.route("/api/monitor",methods=["GET"])

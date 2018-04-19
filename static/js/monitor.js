@@ -2,11 +2,11 @@ function parse_and_fill(data){
     document.getElementById("monitor_container").innerHTML = "";
     for(i=0;i<data.length;i++){
         var text = `
-        <div class="card" style="width: 18rem;margin-left: 15px;float:left;margin-bottom:10px;margin-top:10px">
+        <div class="card" style="width: 18rem;height: 15rem;margin-left: 15px;float:left;margin-bottom:10px;margin-top:10px">
             <div class="card-body">
-            <h5 class="card-title">`+ data[i].folder+`</h5>
+            <h5 class="card-title">`+ (data[i].folder).slice(0,35)+`</h5>
             <h6 class="card-subtitle mb-2 text-muted">`+ data[i].time+`</h6>
-            <p class="card-text">`+ data[i].link +`</p>
+            <p class="card-text">`+ (data[i].link).slice(0,80) +`</p>
             <button onclick="updateModalData(`+i.toString()+`)" class="btn btn-info card-link" data-toggle="modal" data-target="#detailsModal`+i.toString()+`">View</button>
 
             <div class="modal fade" id="detailsModal`+i.toString()+`" tabindex="-1" role="dialog" aria-labelledby="detailsModalTitle" aria-hidden="true">
@@ -36,7 +36,7 @@ function parse_and_fill(data){
 }
 
 
-function updateModalData(index){
+function updateModalData(index){ // update the wget log continuously of the modal which is open
     console.log(index)
     $.ajax({
         type:"GET",
@@ -45,12 +45,12 @@ function updateModalData(index){
             log_holder = document.getElementById("modal_wget_log"+index.toString())
             var text = `<pre>`+data[index].wget_log+`</pre>`;
             log_holder.innerHTML = text;
-            setTimeout(function(){updateModalData(index);},2000)
+            setTimeout(function(){updateModalData(index);},1000)
         }
     });
 }
 
-function getMonitoringData(){
+function getMonitoringData(){ //run on loading monitor.html
     $.ajax({
         type:"GET",
         url:"/api/monitor", //call the api every 5 sec to fetch the data and 
