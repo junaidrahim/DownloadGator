@@ -2,7 +2,7 @@
 
 from flask import Flask, request, redirect, render_template, jsonify
 from telegram import Telegram
-import os,json
+import os,json,datetime,subprocess
 
 app = Flask(__name__)
 download_path = "{}/Downloads/".format(os.getcwd())
@@ -16,9 +16,7 @@ def append_to_downloads(data):
 
 @app.route("/",methods=["GET"])
 def index():
-    os.system("cd " + download_path + " && ls -lh > size.log")
-    # take the second word of the first line in Downloads/size.log
-    size = open(download_path+"/size.log","r").read().split("\n")[0].split(" ")[1]
+    size = subprocess.check_output(['du','-sh', download_path]).split()[0].decode('utf-8')
     return render_template("index.html",dir_size = size)
 
 @app.route("/monitor",methods=["GET"])
@@ -31,7 +29,11 @@ def api_download():
     link = request.form["linkInput"]
     wget_cmd = "wget {} -o wget.log".format(link)
     folder_name = link.split("/")[-1]
-    append_to_downloads({'link':link,'folder':folder_name})
+
+    now = datetime.datetime.now()
+    current_date_time = str(now).split(" ")[0] + " " + str(now.hour) + ":" + str(now.minute) + ":" + str(now.second)
+    append_to_downloads({'time':current_date_time,'link':link,'folder':folder_name})
+    
     os.system("cd {} && mkdir {} && cd {} && {} &".format(download_path,folder_name,folder_name,wget_cmd))
 
     return redirect("/")
