@@ -43,7 +43,7 @@ To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, 
 > ![Main](screenshots/c.png)
 
 ### Telegram Bot
-> <img src="screenshots/d.png" width="500px">
+> <img src="screenshots/d.png" width="400px">
 
 
 [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
