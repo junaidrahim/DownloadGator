@@ -51,9 +51,6 @@ def api_monitor():
     return jsonify(downloads_data)
 
 
-def start_telegram():
-    Telegram("Junaid")
-
 if __name__ == "__main__":
     time.sleep(5) # some time for ngrok to start
 

@@ -29,7 +29,7 @@ To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, 
 
 1.  Cancel a particular Download
 2.  Alert whether Download was started or not
-3.  Server Download Speed Data
+3.  Show the available download speed of the server
 
 
 ## Screenshots
