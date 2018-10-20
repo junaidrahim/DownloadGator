@@ -1,6 +1,9 @@
 # DownloadGator
+A Web App to Start a file download remotely on the server. Server is hosted using [ngrok](https://ngrok.com/) and connecting it to a Telegram Bot can notify about server activities
 
-### Simplest Web App to Start a file download remotely on the server. Could be used by college students who have limited internet access in their colleges to remotely put stuff to download on a server hosted at home(tv shows and stuff). Server can be hosted using [ngrok](https://ngrok.com/) and connecting it to a Telegram Bot can notify about Server activities
+# Uses
+1. Could be used by college students who have limited internet access in their colleges to remotely put stuff to download on a server hosted at home(tv shows and stuff).
+2. Put stuff to download on home servers on the go.
 
 ## How to Start ?
 
@@ -27,10 +30,9 @@ To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, 
 
 ## Features to be Added:
 
-1.  Cancel a particular Download
-2.  Alert whether Download was started or not
-3.  Show the available download speed of the server
-
+- [ ] Cancel a particular Download
+- [ ] Alert whether Download was started or not
+- [ ] Show the available download speed of the server
 
 ## Screenshots
 
@@ -42,8 +44,11 @@ To clear the `Downloads/` folder and reset the `Downloads/downloads.json` file, 
 
 > ![Main](screenshots/c.png)
 
+
+> ![Main](screenshots/d.png)
+
 ### Telegram Bot
-> <img src="screenshots/d.png" width="400px">
+> <img src="screenshots/e.png" width="400px">
 
 
 [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
