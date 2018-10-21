@@ -12,7 +12,7 @@ A Web App to Start a file download remotely on the server. Server is hosted usin
 2. Wget (built-in in linux, need to install on windows)
 3. Python 3
 
-The server is started using ngrok. When the server starts, a message with the url is sent to the Telegram bot **@downloadgator_bot** (Download Telegram from Google Playstore)
+The server is started hosted ngrok. When the server starts, a message with the url is sent to the Telegram bot **@downloadgator_bot** (Download Telegram from Google Playstore)
 
 **Add your telegram user id in the `main.py` file on line 65, else it won't work.**
 **You can get your id from the @get_id_bot in Telegram**
