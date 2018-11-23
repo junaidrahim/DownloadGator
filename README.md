@@ -1,4 +1,5 @@
-# DownloadGator
+![HEADER](screenshots/header.png)
+
 A Web App to Start a file download remotely on the server. Server is hosted using [ngrok](https://ngrok.com/) and connecting it to a Telegram Bot can notify about server activities
 
 # Uses
